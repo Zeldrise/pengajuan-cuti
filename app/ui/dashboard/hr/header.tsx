@@ -1,6 +1,7 @@
 import React from "react";
 import { bebas } from "../../fonts";
-import Image from "next/image";
+import Link from "next/link";
+import { UserCircleIcon } from "@heroicons/react/24/solid";
 
 export default function () {
   return (
@@ -8,13 +9,9 @@ export default function () {
       <p className={`${bebas.className} pt-1 text-white text-3xl`}>
         Pengajuan cuti | HR
       </p>
-      <Image
-        src="/profile.jpg"
-        width={40}
-        height={40}
-        alt="user profile"
-        className="rounded-full"
-      />
+      <Link href="/">
+        <UserCircleIcon className="h-10 w-10 text-white" />
+      </Link>
     </main>
   );
 }
