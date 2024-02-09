@@ -7,7 +7,10 @@ import { PowerIcon } from "@heroicons/react/24/solid";
 export default function sidenav() {
   return (
     <div className="flex h-full flex-col px-2 py-2 md:px-2">
-      <Link className="mb-2 rounded-md bg-dep p-4 md:h-15 " href="/hr">
+      <Link
+        className="mb-2 rounded-md bg-dep p-4 md:h-15 "
+        href="/karyawan"
+      >
         <div>
           <Logo />
         </div>

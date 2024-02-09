@@ -1,5 +1,10 @@
-import { Bebas_Neue } from "next/font/google";
+import { Teko, Inter } from "next/font/google";
 
-export const bebas = Bebas_Neue({ 
-  weight: ['400'],
-  subsets: ['latin']})
+export const teko = Teko({
+  weight: ["400"],
+  subsets: ["latin"],
+});
+export const inter = Inter({
+  weight: ["700","500"],
+  subsets: ["latin"],
+});

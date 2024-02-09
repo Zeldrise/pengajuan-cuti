@@ -7,7 +7,7 @@ export default function Home() {
         <Link href="/karyawan">Karyawan</Link>
         <Link href="/staff">Staff</Link>
         <Link href="/hr">HR</Link>
-        <Link href="/owner">Atasan</Link>
+        <Link href="/owner">Owner</Link>
       </div>
     </main>
   );

@@ -7,7 +7,7 @@ export default function () {
   return (
     <main className="bg-dep p-2 flex justify-between">
       <p className={`${teko.className} pt-1  text-white text-4xl`}>
-        Pengajuan cuti | HR
+        Pengajuan cuti | Owner
       </p>
       <Link href="/">
         <UserCircleIcon className="h-10 w-10 text-white" />

@@ -11,6 +11,9 @@ const config: Config = {
       backgroundColor: {
         dep: "#38348c",
       },
+      textColor: {
+        dep: "#38348c",
+      },
     },
   },
   plugins: [],

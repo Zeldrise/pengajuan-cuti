@@ -14,12 +14,9 @@ import React, { useState } from "react";
 const links = [
   { name: "Home", href: "/hr", icon: HomeIcon },
   {
-    name: "Menu khusus",
+    name: "Data Karyawan",
     icon: Squares2X2Icon,
-    submenu: [
-      { name: "Approval Cuti", href: "/approval-cuti" },
-      { name: "Data Karyawan", href: "/data-karyawan" },
-    ],
+    href: "/data-karyawan"
   },
   { name: "Ajukan Cuti", href: "/hr/ajukan-cuti", icon: ArrowTrendingUpIcon },
   {

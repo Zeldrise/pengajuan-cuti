@@ -21,14 +21,10 @@ const links = [
       { name: "Data Karyawan", href: "/data-karyawan" },
     ],
   },
-  { name: "Ajukan Cuti", href: "/hr/ajukan-cuti", icon: ArrowTrendingUpIcon },
   {
     name: "Laporan Cuti",
     icon: TableCellsIcon,
-    submenu: [
-      { name: "Cuti Karyawan", href: "/laporan-cuti-karyawan" },
-      { name: "Cuti Pribadi", href: "/laporan-cuti-pribadi" },
-    ],
+    href: "/laporan-cuti-karyawan",
   },
 ];
 
