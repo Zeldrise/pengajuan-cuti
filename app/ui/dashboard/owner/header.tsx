@@ -9,7 +9,7 @@ export default function () {
       <p className={`${teko.className} pt-1  text-white text-4xl`}>
         Pengajuan cuti | Owner
       </p>
-      <Link href="/">
+      <Link href="/owner/user-profile">
         <UserCircleIcon className="h-10 w-10 text-white" />
       </Link>
     </main>

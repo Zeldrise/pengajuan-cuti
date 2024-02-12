@@ -1,18 +1,18 @@
 import React from "react";
-import AjukanCuti from "../../ui/form-cuti/form";
+import Approval from "../../ui/approval/page";
 import { Metadata } from "next";
 
 
 export const metadata: Metadata = {
-  title: "Form Cuti",
+  title: "Approval Cuti",
   description: "Website pengajuan cuti PT.Deptech Indonesia",
 };
 
 export default function page() {
   return (
     <div>
-      <h1>Hr</h1>
-      <AjukanCuti />
+      <h1>HR</h1>
+      <Approval />
     </div>
   );
 }

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function page() {
   return (
     <div>
-      <h1>Hr</h1>
+      <h1>karyawan</h1>
       <AjukanCuti />
     </div>
   );

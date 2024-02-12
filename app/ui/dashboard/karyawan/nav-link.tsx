@@ -21,7 +21,7 @@ const links = [
   {
     name: "Laporan Cuti",
     icon: TableCellsIcon,
-    href: "/laporan-cuti-pribadi",
+    href: "/karyawan/laporan-cuti-pribadi",
   },
 ];
 

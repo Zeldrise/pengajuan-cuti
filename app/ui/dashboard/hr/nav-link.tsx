@@ -17,8 +17,8 @@ const links = [
     name: "Menu khusus",
     icon: Squares2X2Icon,
     submenu: [
-      { name: "Approval Cuti", href: "/approval-cuti" },
-      { name: "Data Karyawan", href: "/data-karyawan" },
+      { name: "Approval Cuti", href: "/hr/approval-cuti" },
+      { name: "Data Karyawan", href: "/hr/data-karyawan" },
     ],
   },
   { name: "Ajukan Cuti", href: "/hr/ajukan-cuti", icon: ArrowTrendingUpIcon },
@@ -26,8 +26,8 @@ const links = [
     name: "Laporan Cuti",
     icon: TableCellsIcon,
     submenu: [
-      { name: "Cuti Karyawan", href: "/laporan-cuti-karyawan" },
-      { name: "Cuti Pribadi", href: "/laporan-cuti-pribadi" },
+      { name: "Cuti Karyawan", href: "/hr/laporan-cuti-karyawan" },
+      { name: "Cuti Pribadi", href: "/hr/laporan-cuti-pribadi" },
     ],
   },
 ];

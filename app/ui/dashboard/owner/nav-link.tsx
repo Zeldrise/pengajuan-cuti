@@ -12,19 +12,19 @@ import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 
 const links = [
-  { name: "Home", href: "/hr", icon: HomeIcon },
+  { name: "Home", href: "/owner", icon: HomeIcon },
   {
     name: "Menu khusus",
     icon: Squares2X2Icon,
     submenu: [
-      { name: "Approval Cuti", href: "/approval-cuti" },
-      { name: "Data Karyawan", href: "/data-karyawan" },
+      { name: "Approval Cuti", href: "/owner/approval-cuti" },
+      { name: "Data Karyawan", href: "/owner/data-karyawan" },
     ],
   },
   {
     name: "Laporan Cuti",
     icon: TableCellsIcon,
-    href: "/laporan-cuti-karyawan",
+    href: "/owner/laporan-cuti-karyawan",
   },
 ];
 

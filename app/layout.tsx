@@ -6,8 +6,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Pengajuan cuti",
-    default: "Pengajuan cuti",
+    template: "%s | Deptech.id",
+    default: "Deptech.id",
   },
   description: "Website pengajuan cuti PT.Deptech Indonesia",
 };
