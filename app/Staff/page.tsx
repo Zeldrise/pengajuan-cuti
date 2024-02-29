@@ -11,7 +11,7 @@ export default function page() {
   return (
     <main className="justify-center items-center">
       <div className="flex flex-row gap-2 m-2 h-[100px]">
-        <div className="w-full flex flex-col bg-gradient-to-r from-yellow-500 to-yellow-100 rounded-lg justify-between md:flex-row">
+        <div className="w-full flex flex-col bg-yellow-400 rounded-lg justify-between md:flex-row">
           <p
             className={`${inter.className}  font-bold p-2 text-2xl text-center  md:text-2xl lg:text-3xl xl:text-4xl`}
           >
@@ -23,7 +23,7 @@ export default function page() {
             3
           </p>
         </div>
-        <div className="w-full flex flex-col bg-gradient-to-r from-yellow-100 to-yellow-500 rounded-lg justify-between md:flex-row">
+        <div className="w-full flex flex-col bg-yellow-400 rounded-lg justify-between md:flex-row">
           <p
             className={`${inter.className} font-bold p-2 text-2xl text-center  md:text-2xl lg:text-3xl xl:text-4xl`}
           >
@@ -37,7 +37,7 @@ export default function page() {
         </div>
       </div>
       <div className="flex flex-row gap-2 m-2 h-[100px]">
-        <div className="w-full flex flex-col bg-gradient-to-r from-yellow-500 via-yellow-100 to-yellow-500 rounded-lg justify-between md:flex-row">
+        <div className="w-full flex flex-col bg-yellow-400 rounded-lg justify-between md:flex-row">
           <p
             className={`${inter.className} font-bold p-2 text-2xl text-center  md:text-2xl lg:text-3xl xl:text-4xl`}
           >

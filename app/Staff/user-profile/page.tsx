@@ -1,5 +1,6 @@
 import React from "react";
 import UserProfile from "../../ui/user-profile/page";
+import Button from "../../ui/ud-button/page";
 import Link from "next/link";
 import { Metadata } from "next";
 
@@ -10,10 +11,12 @@ export const metadata: Metadata = {
 
 export default function page() {
   return (
-    <div>
-      <h1>Staff</h1>
+    <div className="grid justify-center">
+      <h1>staff</h1>
       <UserProfile />
-      <Link href="/staff/user-profile/user-detail">User Detail</Link>
+      <Link href="/staff/user-profile/edit-profile">
+        <Button />
+      </Link>
     </div>
   );
 }

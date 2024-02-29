@@ -1,5 +1,5 @@
-import React from 'react'
-import UserDetail from "../../../ui/user-detail/page"
+import React from "react";
+import EditProfile from "../../../ui/edit-profile/page";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,8 +9,9 @@ export const metadata: Metadata = {
 
 export default function page() {
   return (
-    <div><h1>Karyawan</h1>
-    <UserDetail/>
+    <div>
+      <h1>HR</h1>
+      <EditProfile />
     </div>
-  )
+  );
 }

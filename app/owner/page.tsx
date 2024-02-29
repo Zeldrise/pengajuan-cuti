@@ -11,7 +11,7 @@ export default function page() {
   return (
     <main className="justify-center items-center">
       <div className="flex flex-row gap-2 m-2 h-[300px]">
-        <div className="w-full flex flex-col bg-gradient-to-r from-yellow-500 via-yellow-100 to-yellow-500 rounded-lg justify-between md:flex-col lg:flex-row">
+        <div className="w-full flex flex-col bg-yellow-400 rounded-lg justify-between md:flex-col lg:flex-row">
           <p
             className={`${inter.className} font-bold p-2 text-5xl text-center md:text-6xl lg:text-7xl xl:text-7xl`}
           >

@@ -14,7 +14,6 @@ export default function page() {
         <h1>No telephone : 123456789</h1>
         <h1>Posisi : ---------</h1>
         <h1>Departemen : ----------</h1>
-        <h1>Jatah cuti: -------------</h1>
       </div>
     </main>
   );
