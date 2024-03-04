@@ -2,12 +2,18 @@ import React from "react";
 import type { Metadata } from "next";
 import { inter } from "../ui/fonts";
 
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { rolesConfig } from "../utils/config";
+
+
 export const metadata: Metadata = {
   title: "HR",
   description: "Website pengargba(0, 0, 0, 0.486) Indonesia",
 };
 
 export default function page() {
+  
   return (
     <main className="justify-center items-center">
       <div className="flex flex-row gap-2 m-2 h-[100px]">
