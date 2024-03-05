@@ -10,8 +10,13 @@ const config: Config = {
     extend: {
       backgroundColor: {
         dep: "#38348c",
+        depy: "#fbbb14",
       },
       textColor: {
+        dep: "#38348c",
+        depy: "#fbbb14",
+      },
+      borderColor: {
         dep: "#38348c",
       },
     },

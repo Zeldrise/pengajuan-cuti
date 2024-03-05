@@ -11,7 +11,7 @@ import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
 export default function form() {
   return (
     <main className="w-full bg-yellow-50 justify-center items-center rounded-2xl shadow-xl shadow-yellow-500/50">
-      <div className={`${teko.className} font-bold p-5 text-center`}>
+      <div className={`${teko.className} font-normal p-5 text-center`}>
         <p className="text-6xl">Form Pengajuan Cuti</p>
       </div>
       <form>
@@ -160,7 +160,7 @@ export default function form() {
           <div className="p-2 flex flex-col">
             <label className="block text-gray-700">Deskripsi Cuti</label>
             <textarea
-              className="border-1 p-1 border-transparent ring-1 block w-full pl-10 ring-black rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+              className="border-1 p-1 border-transparent ring-1 block w-full ring-black rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
               name="deskripsi_cuti"
             />
           </div>
