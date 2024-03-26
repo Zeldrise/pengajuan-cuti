@@ -10,17 +10,29 @@ export const metadata: Metadata = {
 export default function page() {
   return (
     <main className="justify-center items-center">
-      <div className="flex flex-row gap-2 m-2 h-[300px]">
-        <div className="w-full flex flex-col bg-yellow-400 rounded-lg justify-between md:flex-col lg:flex-row">
+      <div className="flex flex-row gap-2 m-2 h-[100px]">
+        <div className="w-full flex flex-col  bg-yellow-400 rounded-lg justify-between md:flex-row">
           <p
-            className={`${inter.className} font-bold p-2 text-5xl text-center md:text-6xl lg:text-7xl xl:text-7xl`}
+            className={`${inter.className} font-bold p-2 text-2xl text-center md:text-2xl lg:text-3xl xl:text-4xl`}
           >
-            Karyawan
+            Karyawan Cuti
           </p>
           <p
-            className={`${inter.className} font-medium py-0 px-2 text-9xl text-center md:text-9xl lg:text-8xl xl:text-9xl md:py-6 lg:py-5 xl:py-3`}
+            className={`${inter.className} font-medium py-0 px-2 text-5xl text-center md:text-5xl lg:text-6xl xl:text-7xl md:py-6 lg:py-5 xl:py-3`}
           >
-            39
+            4
+          </p>
+        </div>
+        <div className="w-full flex flex-col bg-yellow-400 rounded-lg justify-between md:flex-row">
+          <p
+            className={`${inter.className} font-bold p-2 text-2xl text-center  md:text-2xl lg:text-3xl xl:text-4xl`}
+          >
+            Permintaan cuti
+          </p>
+          <p
+            className={`${inter.className} font-medium py-0 px-2 text-5xl text-center  md:text-5xl lg:text-6xl xl:text-7xl md:py-6 lg:py-5 xl:py-3`}
+          >
+            5
           </p>
         </div>
       </div>

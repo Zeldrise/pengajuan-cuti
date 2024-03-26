@@ -2,7 +2,7 @@ import React from "react";
 // import Search from "./search";
 import { inter } from "../fonts";
 
-import { TrashIcon } from "@heroicons/react/24/outline";
+import { TrashIcon, PencilSquareIcon } from "@heroicons/react/24/outline";
 
 const data = [
   {
@@ -94,9 +94,12 @@ export default function page() {
                       <td className="whitespace-nowrap bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md">
                         <div className="flex items-center">{row.sisa_cuti}</div>
                       </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md">
+                      <td className="whitespace-nowrap flex flex-row bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md">
                         <button>
                           <TrashIcon className="w-6" />
+                        </button>
+                        <button>
+                          <PencilSquareIcon className="w-6" />
                         </button>
                       </td>
                     </tr>

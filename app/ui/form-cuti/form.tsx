@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import { inter, teko } from "../fonts";
 import {
   BuildingOfficeIcon,
@@ -9,6 +10,40 @@ import {
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
 
 export default function form() {
+    const [cutiType, setCutiType] = useState("");
+    const [emergencyOptions, setEmergencyOptions] = useState("");
+    const [doctorLetter, setDoctorLetter] = useState(null);
+
+    const handleCutiTypeChange = (e: any) => {
+      setCutiType(e.target.value);
+      setEmergencyOptions(""); // Reset emergency options when cuti type changes
+    };
+
+    const handleEmergencyOptionsChange = (e: any) => {
+      setEmergencyOptions(e.target.value);
+    };
+
+    const handleDoctorLetterChange = (e: any) => {
+      setDoctorLetter(e.target.files[0]);
+    };
+
+    const handleSubmit = (e: any) => {
+      e.preventDefault();
+      // Collect form data
+      const formData = {
+        cutiType,
+        emergencyOptions,
+        doctorLetter,
+        // Add other form fields here
+      };
+      // Do something with formData, like send it to a server
+      console.log(formData);
+      // Reset form fields after submission
+      setCutiType("");
+      setEmergencyOptions("");
+      setDoctorLetter(null);
+    };
+
   return (
     <main className="w-full bg-yellow-50 justify-center items-center rounded-2xl shadow-xl shadow-yellow-500/50">
       <div className={`${teko.className} font-normal p-5 text-center`}>
@@ -110,52 +145,45 @@ export default function form() {
         <div
           className={`${inter.className} justify-around flex flex-col md:flex-col lg:flex-row`}
         >
-          <div className="p-2 flex flex-col ">
+          <div className="p-2 flex flex-col">
             <label className="text-center p-2 block text-gray-700">
               Alasan Cuti
             </label>
-            <div className="flex flex-row gap-2 justify-around">
-              <label>
-                <input type="radio" name="tipe_cuti" value="cuti_tahunan" />
-                Cuti tahunan
-              </label>
-              <label>
-                <input type="radio" name="tipe_cuti" value="cuti_sakit" />
-                Cuti sakit
-              </label>
-              <label>
-                <input type="radio" name="tipe_cuti" value="kehilangan" />
-                Kehilangan
-              </label>
-            </div>
-            <div className="flex flex-row gap-2 justify-around">
-              <label>
-                <input type="radio" name="tipe_cuti" value="cuti_hamil" />
-                Cuti hamil
-              </label>
-              <label>
-                <input type="radio" name="tipe_cuti" value="liburan" />
-                Liburan
-              </label>
-              <label>
-                <input type="radio" name="tipe_cuti" value="hari_pernikahan" />
-                Hari pernikahan
-              </label>
-            </div>
-            <div className="mt-1 relative shadow-sm">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <QuestionMarkCircleIcon
-                  className="h-5 w-5 text-gray-400"
-                  aria-hidden="true"
+            <select
+              value={cutiType}
+              onChange={handleCutiTypeChange}
+              className="border-1 p-1 border-transparent ring-1 block w-full ring-black rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+            >
+              <option value="">Pilih Alasan Cuti</option>
+              <option value="cuti_tahunan">Cuti Tahunan</option>
+              <option value="cuti_urgensi">Cuti Urgensi</option>
+              <option value="cuti_sakit">Cuti Sakit</option>
+            </select>
+            {cutiType === "cuti_urgensi" && (
+              <select
+                value={emergencyOptions}
+                onChange={handleEmergencyOptionsChange}
+                className="border-1 p-1 border-transparent ring-1 block w-full ring-black rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent mt-2"
+              >
+                <option value="">Pilih Opsi Cuti Urgensi</option>
+                {/* Add options for emergency leave */}
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+              </select>
+            )}
+            {cutiType === "cuti_sakit" && (
+              <div className="mt-2">
+                <label className="block text-gray-700">
+                  Upload Foto Surat Dokter
+                </label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleDoctorLetterChange}
+                  className="border-1 p-1 border-transparent ring-1 block w-full ring-black rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
                 />
               </div>
-              <input
-                className="border-1 p-1 border-transparent ring-1 block w-full pl-10 ring-black rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
-                type="text"
-                name="alasan_cuti"
-                placeholder="Alasan lain"
-              />
-            </div>
+            )}
           </div>
           <div className="p-2 flex flex-col">
             <label className="block text-gray-700">Deskripsi Cuti</label>
