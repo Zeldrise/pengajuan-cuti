@@ -14,7 +14,7 @@ import React, { useState } from "react";
 const links = [
   { name: "Home", href: "/hr", icon: HomeIcon },
   {
-    name: "Menu khusus",
+    name: "Manajemen Cuti",
     icon: Squares2X2Icon,
     submenu: [
       { name: "Approval Cuti", href: "/hr/approval-cuti" },

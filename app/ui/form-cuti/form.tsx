@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { inter, teko } from "../fonts";
 import {
@@ -10,39 +10,15 @@ import {
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
 
 export default function form() {
-    const [cutiType, setCutiType] = useState("");
-    const [emergencyOptions, setEmergencyOptions] = useState("");
-    const [doctorLetter, setDoctorLetter] = useState(null);
+  const [cutiType, setCutiType] = useState("");
+  const [urgentCutiOption, setUrgentCutiOption] = useState("");
+  const [doctorLetter, setDoctorLetter] = useState(null);
 
-    const handleCutiTypeChange = (e: any) => {
-      setCutiType(e.target.value);
-      setEmergencyOptions(""); // Reset emergency options when cuti type changes
-    };
-
-    const handleEmergencyOptionsChange = (e: any) => {
-      setEmergencyOptions(e.target.value);
-    };
-
-    const handleDoctorLetterChange = (e: any) => {
-      setDoctorLetter(e.target.files[0]);
-    };
-
-    const handleSubmit = (e: any) => {
-      e.preventDefault();
-      // Collect form data
-      const formData = {
-        cutiType,
-        emergencyOptions,
-        doctorLetter,
-        // Add other form fields here
-      };
-      // Do something with formData, like send it to a server
-      console.log(formData);
-      // Reset form fields after submission
-      setCutiType("");
-      setEmergencyOptions("");
-      setDoctorLetter(null);
-    };
+  // Function to handle file upload
+  const handleFileUpload = (event: any) => {
+    const file = event.target.files[0];
+    setDoctorLetter(file);
+  };
 
   return (
     <main className="w-full bg-yellow-50 justify-center items-center rounded-2xl shadow-xl shadow-yellow-500/50">
@@ -122,8 +98,68 @@ export default function form() {
             </div>
           </div>
         </div>
+
         <div
           className={`${inter.className} justify-around flex flex-col md:flex-col lg:flex-row`}
+        >
+          <div className={`${inter.className}justify-around flex flex-col`}>
+            <div className="p-2 flex flex-col">
+              <label className="block text-gray-700">Tipe Cuti</label>
+              <select
+                className="border-1 p-2 border-transparent ring-1 block w-full md:w-full lg:w-[262px]  ring-black rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                value={cutiType}
+                onChange={(e) => setCutiType(e.target.value)}
+              >
+                <option value="Cuti Tahunan">Cuti Tahunan</option>
+                <option value="Cuti Urgensi">Cuti Urgensi</option>
+                <option value="Cuti Sakit">Cuti Sakit</option>
+              </select>
+            </div>
+
+            {/* Additional options based on selected cuti type */}
+            {cutiType === "Cuti Urgensi" && (
+              <div className="mx-2">
+                <label className="block text-gray-700">Opsi Cuti Urgensi</label>
+                <select
+                  className="border-1 p-2  border-transparent ring-1 block w-full md:w-full lg:w-[262px] ring-black rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                  value={urgentCutiOption}
+                  onChange={(e) => setUrgentCutiOption(e.target.value)}
+                >
+                  <option value="">Opsi Cuti Urgensi</option>
+                </select>
+              </div>
+            )}
+
+            {cutiType === "Cuti Sakit" && (
+              <div className="ml-2">
+                <label className="block text-gray-700">
+                  Upload Surat Dokter
+                </label>
+                <input
+                  type="file"
+                  accept="image/*,.pdf"
+                  onChange={handleFileUpload}
+                />
+                {doctorLetter && (
+                  <img
+                    src={URL.createObjectURL(doctorLetter)}
+                    alt="Preview"
+                    className="mt-2 mx-auto w-3/4 md:w-3/4 lg:w-[262px] h-auto "
+                  />
+                )}
+              </div>
+            )}
+          </div>
+          <div className="p-2 flex flex-col">
+            <label className="block text-gray-700">Deskripsi Cuti</label>
+            <textarea
+              className="border-1 p-1 border-transparent ring-1 block w-full md:w-full lg:w-[262px] ring-black rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+              name="deskripsi_cuti"
+            />
+          </div>
+        </div>
+        <div
+          className={`${inter.className} justify-center flex flex-col md:flex-col lg:flex-row`}
         >
           <div className="p-2 flex flex-col">
             <label className="block text-gray-700">Tanggal Awal</label>
@@ -139,57 +175,6 @@ export default function form() {
               className="border-1 p-1 border-transparent ring-1 block w-full ring-black rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
               type="date"
               name="tanggal_akhir"
-            />
-          </div>
-        </div>
-        <div
-          className={`${inter.className} justify-around flex flex-col md:flex-col lg:flex-row`}
-        >
-          <div className="p-2 flex flex-col">
-            <label className="text-center p-2 block text-gray-700">
-              Alasan Cuti
-            </label>
-            <select
-              value={cutiType}
-              onChange={handleCutiTypeChange}
-              className="border-1 p-1 border-transparent ring-1 block w-full ring-black rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
-            >
-              <option value="">Pilih Alasan Cuti</option>
-              <option value="cuti_tahunan">Cuti Tahunan</option>
-              <option value="cuti_urgensi">Cuti Urgensi</option>
-              <option value="cuti_sakit">Cuti Sakit</option>
-            </select>
-            {cutiType === "cuti_urgensi" && (
-              <select
-                value={emergencyOptions}
-                onChange={handleEmergencyOptionsChange}
-                className="border-1 p-1 border-transparent ring-1 block w-full ring-black rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent mt-2"
-              >
-                <option value="">Pilih Opsi Cuti Urgensi</option>
-                {/* Add options for emergency leave */}
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-              </select>
-            )}
-            {cutiType === "cuti_sakit" && (
-              <div className="mt-2">
-                <label className="block text-gray-700">
-                  Upload Foto Surat Dokter
-                </label>
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleDoctorLetterChange}
-                  className="border-1 p-1 border-transparent ring-1 block w-full ring-black rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
-                />
-              </div>
-            )}
-          </div>
-          <div className="p-2 flex flex-col">
-            <label className="block text-gray-700">Deskripsi Cuti</label>
-            <textarea
-              className="border-1 p-1 border-transparent ring-1 block w-full ring-black rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
-              name="deskripsi_cuti"
             />
           </div>
         </div>
