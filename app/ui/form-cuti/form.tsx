@@ -144,7 +144,7 @@ export default function form() {
                   <img
                     src={URL.createObjectURL(doctorLetter)}
                     alt="Preview"
-                    className="mt-2 mx-auto w-3/4 md:w-3/4 lg:w-[262px] h-auto "
+                    className="mt-2 mx-auto w-1/2 md:w-1/2 lg:w-[262px] h-auto "
                   />
                 )}
               </div>

@@ -37,16 +37,16 @@ export default function page() {
         </div>
       </div>
       <div className="flex flex-row gap-2 m-2 h-[100px]">
-        <div className="w-full flex flex-col bg-yellow-400 rounded-lg justify-between md:flex-row">
+        <div className="w-full flex flex-col  bg-yellow-400 rounded-lg justify-between md:flex-row">
           <p
-            className={`${inter.className} font-bold p-2 text-2xl text-center  md:text-2xl lg:text-3xl xl:text-4xl`}
+            className={`${inter.className} font-bold p-2 text-2xl text-center md:text-2xl lg:text-3xl xl:text-4xl`}
           >
-            Total Pengajuan
+            Karyawan Cuti
           </p>
           <p
-            className={`${inter.className} font-medium py-0 px-2 text-5xl text-center  md:text-5xl lg:text-6xl xl:text-7xl md:py-6 lg:py-5 xl:py-3`}
+            className={`${inter.className} font-medium py-0 px-2 text-5xl text-center md:text-5xl lg:text-6xl xl:text-7xl md:py-6 lg:py-5 xl:py-3`}
           >
-            5
+            4
           </p>
         </div>
       </div>

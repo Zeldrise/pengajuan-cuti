@@ -41,7 +41,7 @@ export default function page() {
                   type="submit"
                   className="w-full text-center text-white font-bold  bg-yellow-400  focus:ring-4 focus:outline-none focus:ring-yellow-300 shadow-lg shadow-yellow-500/50 rounded-lg  px-5 py-2.5 "
                 >
-                  Login
+                  Reset Password
                 </button>
               </div>
             </form>
@@ -49,11 +49,11 @@ export default function page() {
         </div>
         <div className="flex items-center justify-end md:py-6">
           <Image
-            src="/Login.svg"
+            src="/forgot.svg"
             width={400}
             height={400}
             className="hidden md:block"
-            alt="login dekstop photo"
+            alt="forgot dekstop photo"
           />
         </div>
       </div>

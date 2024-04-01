@@ -12,7 +12,9 @@ const data = [
     departemen: "Teknologi",
     tgl_mulai: "25 maret 2024",
     tgl_akhir: "30 maret 2024",
+    lama_cuti: 5,
     tipe_cuti: "liburan",
+    sisa_cuti: 8,
     deskripsi:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, tenetur. Perspiciatis nihil illum aliquam quisquam earum velit est esse, consequuntur sint. Amet doloribus excepturi ab autem. Dolorem ut officiis repudiandae. ",
   },
@@ -25,7 +27,9 @@ const data = [
     departemen: "Teknologi",
     tgl_mulai: "25 april 2024",
     tgl_akhir: "30 april 2024",
+    lama_cuti: 5,
     tipe_cuti: "liburan",
+    sisa_cuti: 8,
     deskripsi:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, tenetur. Perspiciatis nihil illum aliquam quisquam earum velit est esse, consequuntur sint. Amet doloribus excepturi ab autem. Dolorem ut officiis repudiandae. ",
   },
@@ -54,26 +58,20 @@ export default function page() {
                     <th scope="col" className="px-3 py-5 font-medium">
                       Tanggal Penyerahan
                     </th>
-                    <th scope="col" className="px-3 py-5 font-medium">
-                      No telephone darurat
-                    </th>
-                    <th scope="col" className="px-3 py-5 font-medium">
-                      Posisi
-                    </th>
-                    <th scope="col" className="px-4 py-5 font-medium">
-                      Departemen
-                    </th>
                     <th scope="col" className="px-4 py-5 font-medium">
                       Tanggal Mulai
                     </th>
                     <th scope="col" className="px-4 py-5 font-medium">
-                      Tanggal akhir
+                      Tanggal Akhir
                     </th>
                     <th scope="col" className="px-4 py-5 font-medium">
-                      Tipe cuti
+                      Lama Cuti
                     </th>
-                    <th scope="col" className="px-20 py-5 font-medium ">
-                      Deskripsi
+                    <th scope="col" className="px-4 py-5 font-medium">
+                      Tipe Cuti
+                    </th>
+                    <th scope="col" className="px-4 py-5 font-medium ">
+                      Sisa Cuti
                     </th>
                     <th scope="col" className="px-4 py-5 font-medium">
                       Actions
@@ -97,15 +95,6 @@ export default function page() {
                       <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
                         {row.tgl_penyerahan}
                       </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
-                        {row.no_telephone}
-                      </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
-                        {row.posisi}
-                      </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md">
-                        {row.departemen}
-                      </td>
                       <td className="whitespace-nowrap bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md">
                         {row.tgl_mulai}
                       </td>
@@ -113,13 +102,19 @@ export default function page() {
                         {row.tgl_akhir}
                       </td>
                       <td className="whitespace-nowrap bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md">
+                        {row.lama_cuti}
+                      </td>
+                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md">
                         {row.tipe_cuti}
                       </td>
-                      <td className="whitespace-pre-line bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md overflow-y-auto ">
+                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md">
+                        {row.sisa_cuti}
+                      </td>
+                      {/* <td className="whitespace-pre-line bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md overflow-y-auto ">
                         <div className="max-h-20 text-center">
                           {row.deskripsi}
                         </div>
-                      </td>
+                      </td> */}
 
                       <td className="whitespace-nowrap bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md">
                         <button>
