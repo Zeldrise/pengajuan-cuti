@@ -1,11 +1,27 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { inter } from "../fonts";
-import { PencilSquareIcon } from "@heroicons/react/24/outline";
+import { PencilSquareIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
-const data = [
+interface DataItem {
+  id: number;
+  nama: string;
+  tgl_penyerahan: string;
+  no_telephone: string;
+  posisi: string;
+  departemen: string;
+  tgl_mulai: string;
+  tgl_akhir: string;
+  lama_cuti: number;
+  tipe_cuti: string;
+  sisa_cuti: number;
+  deskripsi: string;
+}
+
+const data: DataItem[] = [
   {
     id: 1,
-    nama: "Kawamatsu",
+    nama: "Kappa",
     tgl_penyerahan: "20 maret 2024",
     no_telephone: "123-456-789",
     posisi: "Developer",
@@ -21,21 +37,46 @@ const data = [
   {
     id: 2,
     nama: "Kawamatsu",
-    tgl_penyerahan: "20 april 2024",
+    tgl_penyerahan: "21 april 2024",
     no_telephone: "123-456-789",
     posisi: "Developer",
     departemen: "Teknologi",
-    tgl_mulai: "25 april 2024",
-    tgl_akhir: "30 april 2024",
+    tgl_mulai: "26 april 2024",
+    tgl_akhir: "31 april 2024",
     lama_cuti: 5,
     tipe_cuti: "liburan",
-    sisa_cuti: 8,
+    sisa_cuti: 7,
     deskripsi:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, tenetur. Perspiciatis nihil illum aliquam quisquam earum velit est esse, consequuntur sint. Amet doloribus excepturi ab autem. Dolorem ut officiis repudiandae. ",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, tenetur. Perspiciatis nihil illum aliquam quisquam earum velit est esse, consequuntur sint. Amet doloribus excepturi ab autem. Dolorem ut officiis repudiandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum magnam porro, ex tempore sequi explicabo ratione qui culpa repudiandae voluptas veniam rerum ullam natus repellat aspernatur ab facere, beatae exercitationem maxime assumenda magni adipisci! Provident asperiores facilis molestias cupiditate voluptatum alias quas maxime natus fuga distinctio, esse quaerat nostrum doloremque placeat aut explicabo soluta. Ad eos reiciendis recusandae dolorem voluptatum nobis temporibus consequatur, eveniet aperiam ab at, repudiandae accusantium in soluta, maxime sint. Doloremque aliquid debitis minus dolorem provident suscipit obcaecati enim nisi eligendi itaque qui cum sit molestias officia optio aliquam eos, iure veritatis eius magnam dolores incidunt beatae? ",
   },
 ];
 
 export default function page() {
+  const [selectedData, setSelectedData] = useState<DataItem | null>(null);
+  const [accepted, setAccepted] = useState<boolean>(false);
+  const [rejected, setRejected] = useState<boolean>(false);
+
+  const handleDetailClick = (rowData: DataItem) => {
+    setSelectedData(rowData);
+    setAccepted(false); // Reset state accepted
+    setRejected(false); // Reset state rejected
+  };
+
+  const handleCloseModal = () => {
+    setSelectedData(null);
+  };
+
+  const handleAccept = () => {
+    setAccepted(true);
+    setSelectedData(null); // Tutup modul setelah menerima
+    alert("Permohonan cuti diterima!");
+  };
+
+  const handleReject = () => {
+    setRejected(true);
+    setSelectedData(null); // Tutup modul setelah menolak
+    alert("Permohonan cuti ditolak!");
+  };
   return (
     <div className="w-full">
       <h1 className={`${inter.className} mb-8 text-xl md:text-2xl`}>
@@ -117,8 +158,8 @@ export default function page() {
                       </td> */}
 
                       <td className="whitespace-nowrap bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md">
-                        <button>
-                          <PencilSquareIcon className="w-6" />
+                        <button onClick={() => handleDetailClick(row)}>
+                          <XMarkIcon className="w-6" />
                         </button>
                       </td>
                     </tr>
@@ -129,6 +170,82 @@ export default function page() {
           </div>
         </div>
       </div>
+      {/* Modul detail */}
+      {selectedData && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-8 rounded-md w-full max-h-96 m-3 mt-10 md:w-1/2 overflow-y-auto">
+            <div className="flex flex-row justify-between">
+              <h2 className="text-lg font-semibold mb-4">Detail Data</h2>
+              <button onClick={handleCloseModal}>
+                <XMarkIcon className="w-6 mb-4" />
+              </button>
+            </div>
+            <p>
+              <span className="font-semibold">Nama:</span> {selectedData.nama}
+            </p>
+            <p>
+              <span className="font-semibold">Tanggal Penyerahan:</span>{" "}
+              {selectedData.tgl_penyerahan}
+            </p>
+            <p>
+              <span className="font-semibold">Nomor Telephone:</span>{" "}
+              {selectedData.no_telephone}
+            </p>
+            <p>
+              <span className="font-semibold">Posisi:</span>{" "}
+              {selectedData.posisi}
+            </p>
+            <p>
+              <span className="font-semibold">Departemen:</span>{" "}
+              {selectedData.departemen}
+            </p>
+            <p>
+              <span className="font-semibold">Tanggal Mulai:</span>{" "}
+              {selectedData.tgl_mulai}
+            </p>
+            <p>
+              <span className="font-semibold">Tanggal Akhir:</span>{" "}
+              {selectedData.tgl_akhir}
+            </p>
+            <p>
+              <span className="font-semibold">Lama Cuti:</span>{" "}
+              {selectedData.lama_cuti}
+            </p>
+            <p>
+              <span className="font-semibold">Tipe Cuti:</span>{" "}
+              {selectedData.tipe_cuti}
+            </p>
+            <p>
+              <span className="font-semibold">Sisa Cuti:</span>{" "}
+              {selectedData.sisa_cuti}
+            </p>
+            <div className="flex flex-row">
+              <p className="font-semibold">Deskripsi:&nbsp;</p>
+              <p>{selectedData.deskripsi}</p>
+            </div>
+            <div className="flex flex-row justify-around mt-5">
+              <button
+                className={`bg-green-500 text-white px-4 py-2 rounded-md mr-2 ${
+                  accepted ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+                onClick={handleAccept}
+                disabled={accepted}
+              >
+                Terima
+              </button>
+              <button
+                className={`bg-red-500 text-white px-4 py-2 rounded-md ${
+                  rejected ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+                onClick={handleReject}
+                disabled={rejected}
+              >
+                Tolak
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -10,11 +10,15 @@ import {
 
 export default function page() {
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
+  };
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(!showConfirmPassword);
   };
 
   const handleSubmit = (event: any) => {
@@ -93,7 +97,7 @@ export default function page() {
                     />
                   </div>
                   <input
-                    type={showPassword ? "text" : "password"}
+                    type={showConfirmPassword ? "text" : "password"}
                     id="confirm-password"
                     name="confirm-password"
                     className="border-1 p-1 border-transparent ring-1 block w-full pl-10 ring-black rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
@@ -102,10 +106,10 @@ export default function page() {
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   />
                   <div
-                    onClick={togglePasswordVisibility}
+                    onClick={toggleConfirmPasswordVisibility}
                     className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
                   >
-                    {showPassword ? (
+                    {showConfirmPassword ? (
                       <EyeSlashIcon
                         className="h-5 w-5 text-gray-400"
                         aria-hidden="true"
