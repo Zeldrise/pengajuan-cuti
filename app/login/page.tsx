@@ -8,6 +8,11 @@ import {
   EyeIcon,
   EyeSlashIcon,
 } from "@heroicons/react/24/solid";
+import Checkbox from "@mui/material/Checkbox";
+import MuiFormControlLabel, {
+  FormControlLabelProps,
+} from "@mui/material/FormControlLabel";
+import { styled, useTheme } from "@mui/material/styles";
 import Link from "next/link";
 
 export default function page() {
@@ -16,6 +21,15 @@ export default function page() {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
+  const FormControlLabel = styled(MuiFormControlLabel)<FormControlLabelProps>(
+    ({ theme }) => ({
+      "& .MuiFormControlLabel-label": {
+        fontSize: "0.875rem",
+        color: theme.palette.text.secondary,
+      },
+    })
+  );
 
   return (
     <main className="justify-center items-center">
@@ -28,7 +42,11 @@ export default function page() {
             <p className={`${teko.className} font-bold text-4xl text-center`}>
               login
             </p>
-            <form>
+            <form
+              noValidate
+              autoComplete="off"
+              onSubmit={(e) => e.preventDefault()}
+            >
               <div className="mb-4">
                 <label htmlFor="email" className="block text-gray-700">
                   Email
@@ -84,6 +102,7 @@ export default function page() {
                     )}
                   </div>
                 </div>
+                <FormControlLabel control={<Checkbox />} label="Remember Me" />
               </div>
               <div className="mt-[125px]">
                 <Link href="/forgot">
