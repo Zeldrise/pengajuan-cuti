@@ -1,7 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import { inter } from "../fonts";
-import { PencilSquareIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  DocumentMagnifyingGlassIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
+
 
 interface DataItem {
   id: number;
@@ -159,7 +163,7 @@ export default function page() {
 
                       <td className="whitespace-nowrap bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md">
                         <button onClick={() => handleDetailClick(row)}>
-                          <XMarkIcon className="w-6" />
+                          <DocumentMagnifyingGlassIcon className="w-6" />
                         </button>
                       </td>
                     </tr>
@@ -225,15 +229,6 @@ export default function page() {
             </div>
             <div className="flex flex-row justify-around mt-5">
               <button
-                className={`bg-green-500 text-white px-4 py-2 rounded-md mr-2 ${
-                  accepted ? "opacity-50 cursor-not-allowed" : ""
-                }`}
-                onClick={handleAccept}
-                disabled={accepted}
-              >
-                Terima
-              </button>
-              <button
                 className={`bg-red-500 text-white px-4 py-2 rounded-md ${
                   rejected ? "opacity-50 cursor-not-allowed" : ""
                 }`}
@@ -241,6 +236,15 @@ export default function page() {
                 disabled={rejected}
               >
                 Tolak
+              </button>
+              <button
+                className={`bg-green-500 text-white px-4 py-2 rounded-md mr-2 ${
+                  accepted ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+                onClick={handleAccept}
+                disabled={accepted}
+              >
+                Terima
               </button>
             </div>
           </div>
