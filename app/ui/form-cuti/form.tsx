@@ -22,6 +22,7 @@ export default function form() {
 
   return (
     <main className="w-full bg-yellow-50 justify-center items-center rounded-2xl shadow-xl shadow-yellow-500/50">
+      <p className="font-bold text-end mt-5 mr-5">Sisa Cuti : 7</p>
       <div className={`${teko.className} font-normal p-5 text-center`}>
         <p className="text-6xl">Form Pengajuan Cuti</p>
       </div>

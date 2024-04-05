@@ -6,12 +6,11 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 
-
 interface DataItem {
   id: number;
   nama: string;
   tgl_penyerahan: string;
-  no_telephone: string;
+  telephone_darurat: string;
   posisi: string;
   departemen: string;
   tgl_mulai: string;
@@ -27,7 +26,7 @@ const data: DataItem[] = [
     id: 1,
     nama: "Kappa",
     tgl_penyerahan: "20 maret 2024",
-    no_telephone: "123-456-789",
+    telephone_darurat: "123-456-789",
     posisi: "Developer",
     departemen: "Teknologi",
     tgl_mulai: "25 maret 2024",
@@ -42,7 +41,7 @@ const data: DataItem[] = [
     id: 2,
     nama: "Kawamatsu",
     tgl_penyerahan: "21 april 2024",
-    no_telephone: "123-456-789",
+    telephone_darurat: "123-456-789",
     posisi: "Developer",
     departemen: "Teknologi",
     tgl_mulai: "26 april 2024",
@@ -192,8 +191,8 @@ export default function page() {
               {selectedData.tgl_penyerahan}
             </p>
             <p>
-              <span className="font-semibold">Nomor Telephone:</span>{" "}
-              {selectedData.no_telephone}
+              <span className="font-semibold">Telephone Darurat:</span>{" "}
+              {selectedData.telephone_darurat}
             </p>
             <p>
               <span className="font-semibold">Posisi:</span>{" "}
